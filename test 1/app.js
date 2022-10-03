@@ -11,14 +11,12 @@
 
 //Bài 2
 // let str = "this is a test";
-// let strArr = str.split("");
-// for (let i = 0; i < strArr.length; i++) {
-//     let charArr = strArr[i].split("");
-//     charArr[0] = charArr[0].toUpperCase();
-//     strArr[i] = charArr.join("");
-
-// }
-// console.log(strArr);
+// let strArr = str.split(" ");
+// let newStr = strArr.map((str) => {
+//     return str[0].toUpperCase() + str.substring(1)
+// })
+// newStr = newStr.join(' ');
+// console.log(newStr);
 //..................................................................
 
 
