@@ -70,29 +70,71 @@
 //..................................................................
 
 // Bài 6
-// let date = +prompt("Hãy nhập ngày");
-// if (Number.isInteger(date) === false && date <= 0 || date > 31) {
-//     alert("Ngày bạn nhập không tồn tại");
-// }
-// let month = +prompt("Hãy nhập tháng");
-// if (Number.isInteger(month) === false && month <= 0 || month > 12) {
-//     alert("Tháng bạn nhập không tồn tại");
-// }
-// let year = +prompt("Hãy nhập năm");
-// if (Number.isInteger(year) === false && year <= 0) {
-//     alert("Năm bạn nhập không tồn tại");
-// }
-// if ((month === 4 || month === 6 || month === 9 || month === 11) && date === 31) {
-//     alert(`Ngày ${date} tháng ${month} năm ${year} không tồn tại`);
-// } else if (month === 2 && (year % 4 === 0 || year % 400 === 0) && date <= 29) {
-//     alert(`Ngày ${date} tháng ${month} năm ${year} tồn tại`);
-// } else if (month === 2 && date > 28) {
-//     alert(`Ngày ${date} tháng ${month} năm ${year} không tồn tại`);
-// } else {
-//     alert(`Ngày ${date} tháng ${month} năm ${year} tồn tại`);
-// }
+var leapYear = function (year) {
+    if ((year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+let date = +prompt("Hãy nhập ngày");
+while (Number.isInteger(date) === false && date <= 0 || date > 31) {
+    date = +prompt(`Ngày ${date} không tồn tại`);
+}
+let month = +prompt("Hãy nhập tháng");
+while (Number.isInteger(month) === false && month <= 0 || month > 12) {
+    month = +prompt(`Tháng ${month} không tồn tại`);
+}
+let year = +prompt("Hãy nhập năm");
+while (Number.isInteger(year) === false && year <= 0) {
+    year = +prompt(`Năm ${year} không tồn tại`);
+}
+let arr1 = [1, 3, 5, 7, 8, 10, 12];
+let arr2 = [4, 6, 9, 11];
+if (arr1.indexOf(month) !== -1 && month !== 12) {
+    if (date < 31) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
+    } else if (date == 31) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày 1 tháng ${month + 1} năm ${year}`);
+    }
+} if (arr2.indexOf(month) !== -1) {
+    if (date < 30) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
+    } else {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày 1 tháng ${month + 1} năm ${year}`);
+    }
+} if (month == 12) {
+    if (date < 31) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
+    } else if (date == 31) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày 1 tháng 1 năm ${year + 1}`);
+    }
+} if (month == 2 && leapYear(year) == false) {
+    if (date < 28) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
+    } else if (date == 28) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày 1 tháng ${month + 1} năm ${year}`);
+    }else{
+        alert("Ngày không tồn tại");
+    }
 
+} if (month == 2 && leapYear(year) == true) {
+    if (date < 29) {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
+    } else if( date == 29)  {
+        alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
+        alert(`Ngày tiếp theo là ngày 1 tháng ${month + 1} năm ${year}`);
+    }else {
+        alert("Ngày không tồn tại");
+    }
 
-
-
-
+}
