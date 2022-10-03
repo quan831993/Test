@@ -89,9 +89,9 @@ let year = +prompt("Hãy nhập năm");
 while (Number.isInteger(year) === false && year <= 0) {
     year = +prompt(`Năm ${year} không tồn tại`);
 }
-let arr1 = [1, 3, 5, 7, 8, 10, 12];
+let arr1 = [1, 3, 5, 7, 8, 10];
 let arr2 = [4, 6, 9, 11];
-if (arr1.indexOf(month) !== -1 && month !== 12) {
+if (arr1.indexOf(month) !== -1) {
     if (date < 31) {
         alert(`Ngày ${date} tháng ${month} năm ${year} hợp lệ`);
         alert(`Ngày tiếp theo là ngày ${date + 1} tháng ${month} năm ${year}`);
