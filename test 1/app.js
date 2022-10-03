@@ -95,9 +95,4 @@
 
 
 
-// Bài 7
-let bookStore = ["Tôi thấy hoa vàng trên cỏ xanh", "Đắc nhân tâm"];
-let cart = [];
-let a = prompt("Bạn muốn mua cuốn sách nào?");
-cart = bookStore.push(a);
 
